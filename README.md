@@ -1,2 +1,0 @@
-# website1
-Schoolopdracht
