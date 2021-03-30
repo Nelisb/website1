@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<playlist>
+  <song>
+    <id>1</id>
+    <title>if i can't</title>
+    <artist>50 cents</artist>
+    <year>2005</year>
+    <genre>rap</genre>
+    <file>link</file>
+  </song>
+    <id>2</id>
+    <title>time in a bottle</title>
+    <artist>jimmy croche</artist>
+    <year>1973</year>
+    <genre>accoustic</genre>
+    <file>link</file>
+</playlist>
