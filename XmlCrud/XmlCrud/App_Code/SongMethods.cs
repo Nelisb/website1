@@ -1,6 +1,5 @@
-﻿using System;
-using System.Data;
-
+﻿using System.Data;
+using System;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
@@ -12,17 +11,17 @@ public class Pokoes
 		// TODO: Add constructor logic here
 		//
 	}
-	public DataSet GetAllSongs(sting file)
+	public DataSet GetAllSongs(string filepath)
     {
-		DataSet ds -new DataSet("playlist");
+		DataSet ds =new DataSet("playlist");
 
-		DataTable dtSongs -new DataTable("song");
+		DataTable dtSongs =new DataTable("song");
 
-		DataColumn dcId -new DataColumn("id")
+		DataColumn dcId = new DataColumn("id");
 		DataColumn dcTitle = new DataColumn("title");
 		DataColumn dcArtist = new DataColumn("artist");
 		DataColumn dcYear = new DataColumn("year");
-		DataCulmn dcGenre = new DataColumn("genre");
+		DataColumn dcGenre = new DataColumn("genre");
 		DataColumn dcFile = new DataColumn("file");
 
 		dtSongs.Columns.Add(dcId);
@@ -33,10 +32,11 @@ public class Pokoes
 		dtSongs.Columns.Add(dcFile);
 		ds.Tables.Add(dtSongs);
 
-        ds.ReadXml(HttpContext.Current.Server.MapPath(file));
+        ds.ReadXml(HttpContext.Current.Server.MapPath(filepath));
 
 		return ds;
 	}
+	
 }
 
 

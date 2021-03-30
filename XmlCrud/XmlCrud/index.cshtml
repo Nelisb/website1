@@ -1,1 +1,42 @@
-﻿
+﻿<!DOCTYPE html>
+
+@using System;
+@using XmlCrud.App_Code;
+
+@{
+    SongMethods mySongMethods = new SongMethods();
+    string filePath = Server.MapPath(@"~\App_Data\playlist.xml");
+    DataSet ds = mySongMethods.GetAllSongs(filePath);
+}
+<html>
+<head>
+    <title>XmlCrud</title>
+    <link href="~/Content/bootstrap.min.css" rel"stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <br /><br />
+          <table class="table-bordered">
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Year</th>
+                <th>Genre</th>
+                <th>File</th>
+               </tr>
+
+              @foreach (DataRow dr in ds.Tables["song"].Rows)
+              {
+                  <tr>
+                      <td>@dr["id"]</td>
+                      <td>@dr["title"]</td>
+                      <td>@dr["artist"]</td>
+                      <td>@dr["year"]</td>
+                      <td>@dr["genre"]</td>
+                      <td>@dr["file"]</td>
+                  </tr>
+              }
+          </table>
+</body>
+</html>
