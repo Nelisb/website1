@@ -4,8 +4,8 @@
 @using XmlCrud.App_Code;
 
 @{
-    SongMethods mySongMethods = new SongMethods();
-    string filePath = Server.MapPath(@"~\App_Data\playlist.xml");
+    Pokoes mySongMethods = new Pokoes();
+    string filePath = (@"~\App_Data\playlist.xml");
     DataSet ds = mySongMethods.GetAllSongs(filePath);
 }
 <html>
