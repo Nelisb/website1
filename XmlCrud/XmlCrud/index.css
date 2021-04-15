@@ -1,0 +1,34 @@
+body {
+    margin:0;
+}
+#container{
+    height:95vh;
+    position: relative;
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+}
+header {
+    padding: 10px;
+    text-align: center;
+    background-color: darkgrey;
+    height: 20px;
+    line-height: 30px;
+    font-size: 20px;
+}
+main {
+    font-size: 20px;
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    color: black;
+}
+footer {
+    color: white;
+    background-color: darkkhaki;
+    height: 15px;
+    text-align: right;
+    padding: 10px;
+    background-color: #333;
+}

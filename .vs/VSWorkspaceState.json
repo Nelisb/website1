@@ -1,4 +1,10 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\XmlCrud",
+    "\\XmlCrud\\XmlCrud",
+    "\\XmlCrud\\XmlCrud\\Content"
+  ],
+  "SelectedNode": "\\XmlCrud\\XmlCrud.sln",
   "PreviewInSolutionExplorer": false
 }
