@@ -22,28 +22,52 @@
             
         <header>Pokoes</header>
         <main>
-          <table class="d-xl-table" border="1">
-              <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Year</th>
-                <th>Genre</th>
-                <th>File</th>
-               </tr>
+            <table class="d-xl-table" border="1">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>File</th>
+                    <th>play/pause</th>
+                </tr>
 
-              @foreach (DataRow dr in ds.Tables["song"].Rows)
-              {
-                  <tr>
-                      <td>@dr["id"]</td>
-                      <td>@dr["title"]</td>
-                      <td>@dr["artist"]</td>
-                      <td>@dr["year"]</td>
-                      <td>@dr["genre"]</td>
-                      <td>@dr["file"]</td>
-                  </tr>
-              }
-          </table>
+                @foreach (DataRow dr in ds.Tables["song"].Rows)
+                {
+                    <tr>
+                        <td>@dr["id"]</td>
+                        <td>@dr["title"]</td>
+                        <td>@dr["artist"]</td>
+                        <td>@dr["year"]</td>
+                        <td>@dr["genre"]</td>
+                        <td>@dr["file"]</td>
+                        <td>
+                            <button onclick="play_Audio()" type="button">Play Audio</button>
+                            <button onclick="pause_Audio()" type="button">Pause Audio</button>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div>
+                <audio id="idAudio">
+                    <source src="eric's_intro.mp3"
+                            type="audio/mpeg">
+                </audio>
+                
+            </div>
+
+            <script>
+                var GFG = document.getElementById("idAudio");
+
+                function play_Audio() {
+                    GFG.play();
+                }
+
+                function pause_Audio() {
+                    GFG.pause();
+                }
+            </script>
         </main>
         <footer>Mathios & Niels</footer>
     </div>
