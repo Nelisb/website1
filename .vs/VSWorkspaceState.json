@@ -3,7 +3,8 @@
     "",
     "\\XmlCrud",
     "\\XmlCrud\\XmlCrud",
-    "\\XmlCrud\\XmlCrud\\Content"
+    "\\XmlCrud\\XmlCrud\\App_Code",
+    "\\XmlCrud\\XmlCrud\\App_Data"
   ],
   "SelectedNode": "\\XmlCrud\\XmlCrud.sln",
   "PreviewInSolutionExplorer": false

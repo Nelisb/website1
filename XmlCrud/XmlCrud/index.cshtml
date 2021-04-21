@@ -7,6 +7,8 @@
     Pokoes mySongMethods = new Pokoes();
     string filePath = (@"~\App_Data\playlist.xml");
     DataSet ds = mySongMethods.GetAllSongs(filePath);
+    Session["playlistClass"] = mySongMethods;
+    Session["filePath"] = filePath;
 }
 <html>
 <head>
@@ -21,6 +23,11 @@
 
             
         <header>Pokoes</header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="CreateSong.cshtml">create song</a></li>
+            </ul>
+        </nav>
         <main>
             <table class="d-xl-table" border="1">
                 <tr>

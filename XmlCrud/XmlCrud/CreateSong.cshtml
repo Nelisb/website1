@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+@using System.Data;
+@using XmlCrud.App_Code;
+
+@{ 
+    Pokoes mySongMethods = Session["playlistClass"] as Pokoes;
+    string filePath = Session["filePath"] as string;
+}
+<html>
+<head>
+
+</head>
+<body>
+    <form action="CreateSong.cshtml" method="POST">
+        <label for="id">ID</label><br>
+        <input type="number" id="id" name="id" value="123"><br>
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" value="Title"><br><br>
+        <label for="artist">Artist</label><br>
+        <input type="text" id="artist" name="artist" value="artist"><br><br>
+        <label for="year">Year</label><br>
+        <input type="text" id="year" name="year" value="Year"><br><br>
+        <label for="genre">Genre</label><br>
+        <input type="text" id="genre" name="genre" value="Genre"><br><br>
+        <label for="file">File</label><br>
+        <input type="text" id="file" name="file" value="File"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    @if (IsPost)
+    {
+        DataRow dr = mySongMethods.GetEmptyDataRow();
+
+        dr[0] = Request.Form["id"];
+        dr[1] = Request.Form["title"];
+        dr[2] = Request.Form["artist"];
+        dr[3] = Request.Form["year"];
+        dr[4] = Request.Form["genre"];
+        dr[5] = Request.Form["file"];
+
+        mySongMethods.CreateSong(dr, filePath);
+        Response.Redirect(@"~/index.cshtml");
+    }
+</body>
+</html>

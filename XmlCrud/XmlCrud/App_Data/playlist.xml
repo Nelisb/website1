@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" standalone="yes"?>
 <playlist>
   <song>
     <id>1</id>
@@ -15,5 +15,13 @@
     <year>1973</year>
     <genre>accoustic</genre>
     <file>link</file>
+  </song>
+  <song>
+    <id>777</id>
+    <title>When I grow up</title>
+    <artist>NF</artist>
+    <year>2021</year>
+    <genre>Rap</genre>
+    <file>Test</file>
   </song>
 </playlist>

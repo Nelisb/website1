@@ -7,15 +7,17 @@ namespace XmlCrud.App_Code
 {
 	public class Pokoes
 	{
+		DataSet ds = new DataSet("playlist");
+
 		public Pokoes()
 		{
 			//
 			// TODO: Add constructor logic here
 			//
 		}
-		public DataSet GetAllSongs(string filepath)
+		public DataSet GetAllSongs(string filePath)
 		{
-			DataSet ds = new DataSet("playlist");
+			ds = new DataSet("playlist");
 
 			DataTable dtSongs = new DataTable("song");
 
@@ -34,11 +36,20 @@ namespace XmlCrud.App_Code
 			dtSongs.Columns.Add(dcFile);
 			ds.Tables.Add(dtSongs);
 
-			ds.ReadXml(HttpContext.Current.Server.MapPath(filepath));
+			ds.ReadXml(HttpContext.Current.Server.MapPath(filePath));
 
 			return ds;
 		}
-
+		public DataRow GetEmptyDataRow()
+        {
+			DataRow dr = ds.Tables["song"].NewRow();
+			return dr;
+        }
+		public void CreateSong(DataRow dataRow, string filePath)
+        {
+			ds.Tables["song"].Rows.Add(dataRow);
+			ds.WriteXml(HttpContext.Current.Server.MapPath(filePath));
+        }
 	}
 
 
