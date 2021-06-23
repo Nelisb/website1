@@ -50,6 +50,15 @@ namespace XmlCrud.App_Code
 			ds.Tables["song"].Rows.Add(dataRow);
 			ds.WriteXml(HttpContext.Current.Server.MapPath(filePath));
         }
+		public void DeleteSong(string id, string filePath)
+        {
+			DataRow[] drArray = ds.Tables["song"].Select("id = '" + id + "'");
+			if(drArray != null && drArray.Length > 0)
+            {
+				drArray[0].Delete();
+				ds.WriteXml(HttpContext.Current.Server.MapPath(filePath));
+            }
+        }
 	}
 
 

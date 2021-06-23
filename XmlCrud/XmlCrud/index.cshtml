@@ -24,12 +24,12 @@
             
         <header>Pokoes</header>
         <nav id="navbar">
-            <ul>
-                <li><a href="CreateSong.cshtml">create song</a></li>
+            <ul id="navlist">
+                <li><a href="CreateSong.cshtml" class="menu_item">create song</a></li>
             </ul>
         </nav>
         <main>
-            <table class="d-xl-table" border="1">
+            <table class="d-table" border="1">
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
@@ -53,6 +53,7 @@
                             <button onclick="play_Audio()" type="button">Play Audio</button>
                             <button onclick="pause_Audio()" type="button">Pause Audio</button>
                         </td>
+                        <td><a href="Deletesong.cshtml?id=@dr["id"]">verwijderen</a></td>
                     </tr>
                 }
             </table>
